@@ -11,4 +11,4 @@
 - [x] O botão de login deve disparar a função login(), importada no topo do arquivo __App.jsx__, e passar os dados necessários.
 - [x] Desabilite o botão de Login enquanto você está executando o login.
 - [x] Mostre uma mensagem de erro de login() caso o Login falhe. A mensagem deve ser limpa a cada nova tentativa de Login.
-- [ ] Mostre um alerta caso o login seja efetuado com sucesso (javascript alert). Investigue a função login() para entender como ter sucesso na requisição.
+- [x] Mostre um alerta caso o login seja efetuado com sucesso (javascript alert). Investigue a função login() para entender como ter sucesso na requisição.

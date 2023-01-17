@@ -19,14 +19,14 @@ export default function LoginForm() {
   };
 
   const handleSubmit = (event) => {
-    console.log("submit");
-
     setError(null);
     setIsRequesting(true);
 
     let values = { email: email, password: password };
     login(values)
-      .then(() => {})
+      .then((response) => {
+        alert("login efetuado com sucesso");
+      })
       .catch((error) => {
         setError(error);
       })
