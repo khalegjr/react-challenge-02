@@ -15,6 +15,10 @@ export default function LoginForm() {
     setPassword(value);
   };
 
+  const handleSubmit = (event) => {
+    console.log("submit");
+  };
+
   return (
     <div className="wrapper">
       <div className="login-form">
@@ -42,7 +46,12 @@ export default function LoginForm() {
         </div>
 
         <div className="button">
-          <button>Login</button>
+          <button
+            disabled={email === "" || password.length < 6}
+            onClick={handleSubmit}
+          >
+            Login
+          </button>
         </div>
       </div>
     </div>
