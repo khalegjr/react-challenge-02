@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./index.css";
+import { login } from "./utils";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -17,6 +18,9 @@ export default function LoginForm() {
 
   const handleSubmit = (event) => {
     console.log("submit");
+
+    let values = { email: email, password: password };
+    login(values);
   };
 
   return (
