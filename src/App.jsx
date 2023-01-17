@@ -1,6 +1,14 @@
+import { useState } from "react";
 import "./index.css";
 
 export default function LoginForm() {
+  const [email, setEmail] = useState("");
+
+  const handleEmail = (event) => {
+    const { value } = event.target;
+    setEmail(value);
+  };
+
   return (
     <div className="wrapper">
       <div className="login-form">
@@ -9,7 +17,13 @@ export default function LoginForm() {
         <div className="errorMessage"></div>
         <div className="row">
           <label htmlFor={"email"}>Email</label>
-          <input id={"email"} type={"email"} autoComplete="off" />
+          <input
+            id={"email"}
+            type={"email"}
+            autoComplete="off"
+            value={email}
+            onChange={handleEmail}
+          />
         </div>
         <div className="row">
           <label htmlFor={"password"}>Password</label>
