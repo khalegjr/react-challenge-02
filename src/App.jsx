@@ -3,10 +3,16 @@ import "./index.css";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleEmail = (event) => {
     const { value } = event.target;
     setEmail(value);
+  };
+
+  const handlePassword = (event) => {
+    const { value } = event.target;
+    setPassword(value);
   };
 
   return (
@@ -27,7 +33,12 @@ export default function LoginForm() {
         </div>
         <div className="row">
           <label htmlFor={"password"}>Password</label>
-          <input id={"password"} type={"password"} />
+          <input
+            id={"password"}
+            type={"password"}
+            value={password}
+            onChange={handlePassword}
+          />
         </div>
 
         <div className="button">
