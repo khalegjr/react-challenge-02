@@ -6,6 +6,7 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
+  const [isRequesting, setIsRequesting] = useState(false);
 
   const handleEmail = (event) => {
     const { value } = event.target;
@@ -21,13 +22,15 @@ export default function LoginForm() {
     console.log("submit");
 
     setError(null);
+    setIsRequesting(true);
 
     let values = { email: email, password: password };
     login(values)
       .then(() => {})
       .catch((error) => {
         setError(error);
-      });
+      })
+      .finally(() => setIsRequesting(false));
   };
 
   return (
@@ -58,7 +61,7 @@ export default function LoginForm() {
 
         <div className="button">
           <button
-            disabled={email === "" || password.length < 6}
+            disabled={email === "" || password.length < 6 || isRequesting}
             onClick={handleSubmit}
           >
             Login
